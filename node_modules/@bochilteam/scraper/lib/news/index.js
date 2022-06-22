@@ -1,0 +1,18 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.merdeka = exports.liputan6 = exports.suaracom = exports.kompas = exports.antaranews = exports.cnbindonesia = void 0;
+const cnbcindonesia_1 = __importDefault(require("./cnbcindonesia"));
+exports.cnbindonesia = cnbcindonesia_1.default;
+const antaranews_1 = __importDefault(require("./antaranews"));
+exports.antaranews = antaranews_1.default;
+const kompas_1 = __importDefault(require("./kompas"));
+exports.kompas = kompas_1.default;
+const suaracom_1 = __importDefault(require("./suaracom"));
+exports.suaracom = suaracom_1.default;
+const liputan6_1 = __importDefault(require("./liputan6"));
+exports.liputan6 = liputan6_1.default;
+const merdeka_1 = __importDefault(require("./merdeka"));
+exports.merdeka = merdeka_1.default;

@@ -1,0 +1,75 @@
+{
+  "name": "node-scrapy",
+  "description": "Simple, lightweight and expressive web scraping with Node.js",
+  "keywords": [
+    "web",
+    "html",
+    "css",
+    "selector",
+    "scraping",
+    "scrape",
+    "scraper",
+    "scrapy",
+    "crawler"
+  ],
+  "version": "0.5.0",
+  "author": "Stefan Maric <me@stefanmaric.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eeshi/node-scrapy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eeshi/node-scrapy/issues"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/eeshi/node-scrapy",
+  "readmeFilename": "README.md",
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "main": "server/index.js",
+  "browser": "dist/browser.umd.min.js",
+  "files": [
+    "browser/",
+    "dist/",
+    "lib/",
+    "server/"
+  ],
+  "dependencies": {
+    "css-select": "^2.0.2",
+    "css-select-browser-adapter": "^0.1.2",
+    "dom-serializer": "^1.0.1",
+    "htmlparser2": "^4.1.0",
+    "nearley": "^2.16.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@rollup/plugin-babel": "^5.2.0",
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@stefanmaric/eslint-config-munchies-base": "^0.3.0",
+    "@stefanmaric/eslint-config-munchies-gourmet": "^0.3.0",
+    "@stefanmaric/eslint-config-munchies-modern": "^0.3.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.7.0",
+    "eslint-import-resolver-node": "^0.3.4",
+    "eslint-plugin-import": "^2.16.0",
+    "prettier": "^2.0.5",
+    "rollup": "^2.26.5",
+    "tap": "^14.10.8",
+    "terser": "^5.2.1"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "prebuild": "npm run grammar",
+    "build": "rollup -c -f umd browser/index.js | tee dist/browser.umd.js | terser > dist/browser.umd.min.js",
+    "pregrammar": "mkdir -p dist/",
+    "grammar": "npx nearleyc lib/query-parser.ne -o dist/grammar.js",
+    "format": "prettier --write './**/*.{js,json,md}' && eslint --quiet --fix './**/*.js'",
+    "pretest": "npm run grammar",
+    "test": "eslint . && tap 'test/**/*.test.js'",
+    "prepare": "npm run build"
+  }
+}

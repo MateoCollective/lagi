@@ -1,0 +1,1 @@
+{"version":3,"sources":["meta.ts"],"names":["NAME","VERSION"],"mappings":"AAAA;AAEA,OAAO,MAAMA,IAAY,GAAG,YAArB;AAEP,OAAO,MAAMC,OAAe,GAAG,OAAxB","sourcesContent":["// This file contains compile-time defined variables.\n\nexport const NAME: string = \"zs-extract\";\n\nexport const VERSION: string = \"1.4.1\";\n"],"file":"meta.mjs","sourceRoot":"../src"}
